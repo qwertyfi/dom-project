@@ -39,7 +39,17 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
+let products = document.querySelectorAll(
+  "body > div.main > div.as-imagegrid-wrapper.row.as-imagegrid--7up.as-imagegrid--base > div"
+); //gets all the product value as a node
+let productArr = []; //creates an empty array
 
+for (let product of products) {
+  let productName = product.innerText;
+  productArr.push(productName);
+} //using for of loop to itterate the value with product name and pushing it to the empty array
+
+console.log(productArr);
 ```
 
 ### Output
@@ -63,14 +73,27 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+//create a new faq element
+let newFaq = document.createElement("section");
+//creating faqElement to append inside newFaq element
+let faqElement = document.createElement("h3");
+// Set attributes or properties for the faqElement
+faqElement.textContent = "My New FAQ";
+newFaq.appendChild(faqElement);
+newFaq.className = "parent";
+// find the parent element on which the faq element is supposed to be appended
+let targetElement = document.querySelector(
+  "#hcfe-content > section > div > div > article > nav"
+);
+// Append the faqElement as a child to the parent element
+targetElement.appendChild(newFaq);
 ```
 
 ### Output
 
 ![Output](./project-images/Pic5.png)
 
-4. Webiste Name: [OnePlus](https://www.oneplus.in/support)
+4. Webiste Name: [OnePlus](https://service.oneplus.com/in/contact)
 
 ### Topics
 
@@ -84,10 +107,15 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 
       Change the contact number
 
-      ### **Solution** 🚀
+### **Solution** 🚀
 
 ```javascript
-
+//selection of the element
+let phoneNumber = document.querySelector(
+  "#contactUs > div > div.contactUs--content > div > a:nth-child(1) > div > div.item--subtitle"
+);
+//changing phone numeber using innerText
+phoneNumber.innerText = "9876543210";
 ```
 
 ### Output
@@ -111,7 +139,10 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+// note: we're selecting m30 model as zfold is not available anymore like shown in the picuture
+document.querySelector(
+  "#my-recommended-product > div > div.my-recommended-product__card-swiper.swiper-container.basic-swiper.swiper-container-initialized.swiper-container-horizontal > div > div.my-recommended-product__card-item-wrap.swiper-slide.js-pf-product-card.swiper-slide-active > div > div.my-recommended-product__card-content > div.my-recommended-product__card-cta-wrap > div > a"
+).innerText = "Check Out";
 ```
 
 ### Output
@@ -135,7 +166,18 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
      ### **Solution** 🚀
 
 ```javascript
+//selecting the element
+let searchBar = document.querySelector('._input_1f3oz_13');
 
+//adding an event listener to add the hover effect to the searchbar when mouse is hovered
+searchBar.addEventListener('mouseenter' , () => {
+    searchBar.style.backgroundColor = 'red';
+});
+
+//adding an event listener to remove the hover effect when mouse leaves
+searchBar.addEventListener('mouseleave' ()=> {
+    searchBar.style.backgroundColor = 'white';
+});
 ```
 
 ### Output
@@ -160,7 +202,12 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+let form = document.getElementById("hp-search-form");
+let input = document.getElementById("hp-search-input");
+//giving value to the search field
+input.value = "for loop";
+//using submit method to submit the value
+form.submit();
 ```
 
 ### Output
@@ -184,7 +231,12 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+//Selecting the language elements using querySelectorAll
+let langElements = document.querySelectorAll("#SIvCob > a");
+//Using for Loop through all the langElements and removing it with remove() method
+for (i = 0; i <= langElements.length; i = i + 2) {
+  langElements[i].remove();
+}
 ```
 
 ### Output
@@ -208,7 +260,13 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+//selecting the elements
+let textElements = document.getElementsByClassName("text-color-white");
+//looping through all the white text color and using the font style property to change it
+for (textElement of textElements) {
+  textElement.style.fontFamily = "monospace";
+  textElement.style.color = "#B1361E";
+}
 ```
 
 ### Output
@@ -232,7 +290,14 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+// Select the button element using its complex CSS selector
+let button = document.querySelector(
+  "#gatsby-focus-wrapper > div > div > main > div.landing-top.container > div > div.col-lg-8.col-lg-offset-2.col-sm-10.col-sm-offset-1.col-xs-12 > a > span.login-btn-text"
+);
+// Attach an event listener to the button for the mouseover event
+button.onmouseover = () => {
+  button.style.backgroundColor = "red";
+};
 ```
 
 ### Output
@@ -256,7 +321,14 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
     ### **Solution** 🚀
 
 ```javascript
+let anchorElement = document.querySelector("body > header > div > a");
 
+// Set background image using CSS
+anchorElement.style.backgroundImage =
+  'url("https://ineuron.ai/images/ineuron-logo.png")';
+
+// Set the href attribute for the link
+anchorElement.href = "https://ineuron.com";
 ```
 
 ### Output
@@ -280,7 +352,7 @@ let description = (document.querySelector(".color-base-70.mb-4").innerHTML =
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector("div.col-xl-4 a.btn").style.backgorundColor = "blue";
 ```
 
 ### Output
@@ -304,7 +376,7 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".f1-heading-text").innerText = "JS BOOTCAMP";
 ```
 
 ### Output
@@ -328,7 +400,14 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+// Select all the elements using querySelectorAll
+let hotDeals = document.querySelectorAll(
+  ".indexDealsTabBar__listDivTitle__l0M_3"
+);
+// Using for of to itterate over the nodelist and change the font size
+for (hotDeal of hotDeals) {
+  hotDeal.style.fontSize = "80px";
+}
 ```
 
 ### Output
@@ -352,7 +431,10 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+let laptop = document.querySelector(
+  "#d560822win9b > section.ps-top > div.ps-system-title-container.ps-title-container > h3"
+);
+laptop.style.marginLeft = "100px";
 ```
 
 ### Output
@@ -376,7 +458,8 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".section_title__VEDfK").innerText =
+  "Start with Scratch";
 ```
 
 ### Output
@@ -400,7 +483,7 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".buy-button").innerHTML = date;
 ```
 
 ### Output
@@ -424,7 +507,7 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".p-f03-footer-container").style.background = "orange";
 ```
 
 ### Output
@@ -448,7 +531,7 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".logo").scr;
 ```
 
 ### Output
@@ -472,7 +555,7 @@ Target the top description and change “Matching developers with great companie
 ### **Solution** 🚀
 
 ```javascript
-
+document.querySelector(".desc").style.color = "orange";
 ```
 
 ### Output
